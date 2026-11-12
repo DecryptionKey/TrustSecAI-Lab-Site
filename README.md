@@ -1,48 +1,38 @@
-# TrustSec AI Lab Site
+# TrustSec AI Lab Website
 
-Static website for the TrustSec AI Lab at the University at Albany.
+A static website for the TrustSec AI Lab at the University at Albany, built as a course project for CYBR 201 (Web Technology Essentials) in Spring 2026.
 
-## Overview
+The site introduces the lab's mission, research areas, collaboration opportunities, and members.
 
-This site presents the lab's:
+## Pages
 
-- Overview
-- Mission
-- Foundational Work
-- Research Focus
-- Why It Matters
-- Collaboration
-- Lab Members
+| File | Content |
+|---|---|
+| `index.html` | Lab overview, research highlights, contact information |
+| `mission.html` | Mission and strategic direction |
+| `foundational-work.html` | Machine learning and AI security areas behind the lab's work |
+| `research-focus.html` | Active research themes (adversarial AI, privacy, LLM safety) |
+| `why-it-matters.html` | Why trustworthy AI security research matters |
+| `collaboration.html` | Ways to collaborate with the lab |
+| `people.html` | Principal investigator and student researchers |
 
-The site was adapted into a custom research-lab website for TrustSec AI Lab and is designed to be hosted as a simple static project on GitHub Pages.
+## Built with
 
-## Project Structure
+- HTML and CSS (`css/theme.css` holds the custom styling)
+- Bootstrap 2 and jQuery for the responsive grid, navigation, and image carousel
+- GitHub Pages for hosting, served straight from the `main` branch
 
-- `index.html` - homepage and lab overview
-- `mission.html` - mission and strategic direction
-- `foundational-work.html` - foundational research areas
-- `research-focus.html` - active research focus areas
-- `why-it-matters.html` - importance and educational impact
-- `collaboration.html` - collaboration opportunities
-- `people.html` - principal investigator and student researchers
-- `css/` - Bootstrap and custom site styling
-- `js/` - frontend JavaScript dependencies
-- `images/` - site images, logos, member photos, and favicon
+## Run locally
 
-## GitHub Pages Hosting
+No build step is needed. From the repository root:
 
-This project can be hosted directly on GitHub Pages as a project site.
+```bash
+python3 -m http.server 8000
+```
 
-Recommended setup:
+Then open http://localhost:8000.
 
-1. Create a GitHub repository.
-2. Push the contents of this folder to the `main` branch.
-3. In GitHub, open `Settings` -> `Pages`.
-4. Set:
-   - `Source`: `Deploy from a branch`
-   - `Branch`: `main`
-   - `Folder`: `/ (root)`
+## Notes
 
-Your published site will then be available at:
-
-`https://<your-github-username>.github.io/<repo-name>/`
+- Photos, names, and lab content belong to the TrustSec AI Lab.
+- The bundled jQuery (1.9.1) is old and has known XSS issues; it's kept only because the Bootstrap 2 carousel depends on it. A future update would move to a current Bootstrap/jQuery or drop jQuery entirely.
